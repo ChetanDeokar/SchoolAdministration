@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form action="{% url 'validate_user' %}" method="post">
+    {% csrf_token %}
+<fieldset>
+    <table>
+        <tr>
+            <td> UserName </td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td> Password </td>
+            <td>{{ form.password }}</td>
+        </tr>
+        <tr>
+            <td> Login As </td>
+            <td>{{ form.usertype }}</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" id="submit"></td>
+        </tr>
+    </table>
+</fieldset>
+</form>
+</body>
+</html>
