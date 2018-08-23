@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+{% block userdetails %}
+    Welcome {% block username %} {% endblock %}
+    Logged In as {% block usertype %} {% endblock %}
+{% endblock %}
+<div><a href="{% url 'logout' %}"> Logout </a> </div>
+</body>
+</html>

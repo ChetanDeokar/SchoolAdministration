@@ -21,7 +21,7 @@ class UserAdmin(BaseUserAdmin):
     list_display = ('email', 'admin', 'usertype', 'status', 'firstname', 'lastname', 'active', 'staff')
     list_filter = ('admin',)
     fieldsets = (
-        (None, {'fields': ('email', 'usertype', 'status', 'active')}),
+        (None, {'fields': ('email', 'password', 'usertype', 'status', 'active')}),
         ('Personal info', {'fields': ('firstname', 'lastname')}),
         ('Permissions', {'fields': ('admin', 'staff')}),
     )
@@ -30,7 +30,7 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2', 'usertype', 'status', 'firstname', 'lastname', 'active',
+            'fields': ('email', 'password', 'password2', 'usertype', 'status', 'firstname', 'lastname', 'active',
                        'staff', 'admin')}
         ),
     )
@@ -40,8 +40,3 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(User, UserAdmin)
-
-
-
-# Remove Group Model from admin. We're not using it.
-admin.site.unregister(Group)

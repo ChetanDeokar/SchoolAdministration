@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from views import show_hm_dashboard
+from views import HeadMasterDashboardView
 
 urlpatterns = [
-    url(r'^dashboard/(?P<id>\d+)', show_hm_dashboard, name='hm_dashboard')
+    url(r'^dashboard/(?P<id>\d+)', HeadMasterDashboardView.as_view(), name='hm_dashboard')
 ]

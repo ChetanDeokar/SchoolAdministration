@@ -23,6 +23,7 @@
     </table>
 </fieldset>
 </form>
+<div id="errors">
 {% if form.errors %}
     {% for field in form %}
         {% for error in field.errors %}
@@ -37,5 +38,6 @@
         </div>
     {% endfor %}
 {% endif %}
+</div>
 </body>
 </html>

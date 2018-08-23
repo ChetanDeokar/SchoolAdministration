@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from views import show_student_dashboard
+from views import StudentView
 
 urlpatterns = [
-    url(r'^dashboard/(?P<id>\d+)', show_student_dashboard, name='student_dashboard')
+    url(r'^dashboard/(?P<id>\d+)', StudentView.as_view(), name='student_dashboard')
 ]
